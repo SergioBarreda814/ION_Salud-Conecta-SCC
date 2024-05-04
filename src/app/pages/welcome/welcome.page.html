@@ -1,0 +1,29 @@
+<app-header title="Salud Conecta" subtitle="B I E N V E N I D O"></app-header>
+<ion-content>
+    <img src="../assets/LogoSC.png" alt="logo de salud conecta" class="logo">
+    <h1>SALUDCONECTA</h1>
+    <h2>Hola, bienvenido.</h2>
+    <section class="mensaje-bienvenida">
+      <p>Para poder acceder a la app, primero debes iniciar sesión.</p>
+    </section>
+    <section class="opciones-acceso">
+
+        <ion-button class="ion-margin-top" expand="block"  routerLink="/auth" mode="ios" fill="solid">
+            Iniciar Sesion Como Paciente
+            <!-- <ion-icon slot="end" name="bandage-outline"></ion-icon> -->
+        </ion-button>
+
+        <p class="P1">¿No tienes cuenta?<a routerLink="#" id="registro"> Regístrate</a></p>
+
+        <ion-button class="ion-margin-top" expand="block"  routerLink="#" mode="ios" fill="solid">
+            Iniciar Sesion Como Medico
+            <!-- <ion-icon slot="end" name="medical-outline"></ion-icon> -->
+        </ion-button>
+
+        <p class="P1">¿No tienes cuenta?<a routerLink="/doc-info" id="registro"> Unete a nuestro equipo.</a></p>
+
+    </section>
+
+
+
+</ion-content>

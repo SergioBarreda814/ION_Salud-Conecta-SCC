@@ -1,0 +1,7 @@
+{
+  "name": "Salud-Conecta",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,13 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="backbutton" [defaultHref]="backbutton" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      <img src="assets/LogoSC.png" alt="Logo de la app">
+      <strong>{{title}}</strong>
+      <div class="subtitle">{{subtitle}}</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

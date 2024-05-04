@@ -1,0 +1,54 @@
+*{
+    padding-left: 5%;
+    padding-right: 3%;
+}
+
+ion-content {
+    --ion-background-color: #f4f5f8; /* Color de fondo */
+   
+  }
+  
+  .imgDoc {
+    width: 100%; /* Ajustar imagen al ancho del contenedor */
+    max-width: 300px; /* Limitar el tamaño máximo de la imagen */
+    display: block; /* Alinear la imagen al centro */
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+  }
+  
+  h1, h2 {
+    color: #3880ff; /* Color de título */
+  }
+  
+  ul {
+    list-style:circle; /* Quitar viñetas de la lista */
+     /* Eliminar el relleno izquierdo de la lista */
+  }
+  
+  ul li {
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+  }
+  
+  p, a {
+    color: #555; /* Color del texto */
+  }
+  
+  a {
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    color: #3880ff; /* Color del enlace */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Subrayar enlace al pasar el cursor */
+  }
+  
+  ion-button {
+    margin-top: 20px; /* Espacio superior entre el botón y el contenido */
+  }
+  
+  /* Estilos para hacer el contenido responsivo */
+  @media (max-width: 768px) {
+    .imgDoc {
+      max-width: 200px; /* Reducir el tamaño máximo de la imagen en dispositivos pequeños */
+    }
+  }
+  

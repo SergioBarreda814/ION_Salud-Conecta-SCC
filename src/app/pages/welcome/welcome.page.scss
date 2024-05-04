@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    background-color: white;
+    overflow: hidden !important;
+  }
+  
+  .logo {
+    height: 110px;
+    width: auto;
+    margin: 0 auto;
+    margin-top: 1em;
+    display: block;
+  }
+  
+  h1 {
+    color:#04305E;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  
+  }
+  
+  h2 {
+    color: black;
+    font-size: 24px;
+    text-transform: capitalize;
+  
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Aplica una sombra con desplazamiento horizontal de 2px, desplazamiento vertical de 2px, desenfoque de 4px y color RGBA */
+  
+  }
+  
+  p {
+    font-size: 15px;
+    background-color: white;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  
+  }
+  
+  
+  /* Contenido principal */
+  main {
+    padding: 20px;
+  }
+  .P1{
+    font-size: 13px;
+    background-color: white;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  a {
+    text-decoration: none; /* Quita el subrayado del enlace */
+  }
+  
+  
+  /* Sección de opciones de acceso */
+  .opciones-acceso {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -30px;
+  }
+  
+  #fill {
+    display: inline-block;
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: #7698F0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    margin-top: 10%;
+  }
+  
+  #registro {
+    text-align: center;
+  }
+  
+  .ion-bu:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Diseño responsivo */
+  @media (max-width: 768px) {
+  
+    /* Ajustar el diseño para pantallas pequeñas */
+    .opciones-acceso {
+      flex-direction: column;
+      /* Apilar botones verticalmente */
+    }
+  
+    .ion-bu {
+      width: 100%;
+      /* Botones ocupan el ancho completo */
+      margin-bottom: 10px;
+      /* Añadir espacio entre botones */
+    }
+  }
