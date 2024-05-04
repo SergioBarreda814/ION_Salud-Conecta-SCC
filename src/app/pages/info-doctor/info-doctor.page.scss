@@ -4,7 +4,7 @@
 }
 
 ion-content {
-    --ion-background-color: #f4f5f8; /* Color de fondo */
+    --ion-background-color: #ffffff; /* Color de fondo */
    
   }
   
@@ -17,11 +17,16 @@ ion-content {
   
   h1, h2 {
     color: #3880ff; /* Color de título */
+    text-align: center;
   }
   
-  ul {
-    list-style:circle; /* Quitar viñetas de la lista */
+  .l1 {
+    list-style:disc; /* Quitar viñetas de la lista */
      /* Eliminar el relleno izquierdo de la lista */
+     font-size: large;
+  }
+  .l2{
+    list-style:georgian;
   }
   
   ul li {
@@ -30,6 +35,7 @@ ion-content {
   
   p, a {
     color: #555; /* Color del texto */
+    font-size: large;
   }
   
   a {
@@ -39,10 +45,17 @@ ion-content {
   
   a:hover {
     text-decoration: underline; /* Subrayar enlace al pasar el cursor */
+    font-weight: 400;
+    color: purple; 
   }
   
   ion-button {
     margin-top: 20px; /* Espacio superior entre el botón y el contenido */
+  }
+  
+  .alent{
+    color: black;
+    font-weight: 700;
   }
   
   /* Estilos para hacer el contenido responsivo */
