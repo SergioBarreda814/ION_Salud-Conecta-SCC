@@ -30,9 +30,14 @@ const routes: Routes = [
     path: 'main',
     loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule), canActivate: [AuthGuard]
   },
+
   {
     path: 'info-doctor',
     loadChildren: () => import('./pages/info-doctor/info-doctor.module').then( m => m.InfoDoctorPageModule)
+  },
+  {
+    path: 'main-doctor',
+    loadChildren: () => import('./pages/main-doctor/main-doctor.module').then( m => m.MainDoctorPageModule)
   }
 ];
 @NgModule({
