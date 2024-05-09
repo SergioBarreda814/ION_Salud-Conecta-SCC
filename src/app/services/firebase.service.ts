@@ -5,6 +5,8 @@ import { User } from '../models/user.module';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { getFirestore, setDoc, doc, getDoc } from '@angular/fire/firestore'
 import { UtilsService } from './utils.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -58,4 +60,14 @@ export class FirebaseService {
   async getDocument(path: string) {
     return (await getDoc(doc(getFirestore(), path))).data();
   }
+
+
+//Prueba // Nombre de doctor.
+getDoctorName(uid: string): Observable<string> {
+  return this.firestore.collection('doctors_centers').doc(uid).valueChanges().pipe(
+    map((doc: any) => {
+      return doc.Name; // Suponiendo que el campo se llama "name"
+    })
+  );
+} 
 }
