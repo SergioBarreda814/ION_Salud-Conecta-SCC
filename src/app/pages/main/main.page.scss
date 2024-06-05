@@ -1,0 +1,37 @@
+ion-content {
+    padding-top: 20px;
+}
+
+ion-item {
+    font-size: 14px;
+
+
+    &.active{
+        color: var(--ion-color-warning);
+
+        ion-icon{
+            color: var(--ion-color-warning);
+        }
+    }
+}
+
+ion-menu{
+    --width: 254px;
+    --min-width: 254px;
+    outline: none;
+}
+
+h4 {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+ion-avatar{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.empty-icon{
+    font-size: 100px;
+}

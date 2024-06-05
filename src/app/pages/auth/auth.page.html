@@ -1,22 +1,8 @@
-<app-header title="Salud Conecta"></app-header>
+<app-header backbutton="/welcome" title="Salud Conecta" subtitle="L O G I N"></app-header>
 <ion-content>
     <div class="d-flex-center">
         
         <form [formGroup]="form" (ngSubmit)="submit()" (keypress.enter)="submit()">
-            <!-- GOOGLE Y APPLE -->
-            <ion-button expand="block" mode="ios" class="LGA" type="button" color="dark" (click)="loginWithGoogle()">
-                <ion-icon slot="start" name="logo-google"></ion-icon>       
-                Continuar con Google
-              </ion-button>
-              
-              
-            <ion-button expand="block" mode="ios" class="LGA" type="submit" color="dark" >
-                <ion-icon slot="start"   name="logo-apple"></ion-icon>       
-                Continuar con Apple
-            </ion-button>
-
-            <!-- LINEA DE DIVICIÓN-->
-            <div class="divider"></div>
 <!-- CORREO -->
             <app-custom-input
                 autocomplete="email" 
@@ -61,7 +47,7 @@
     </div>
 
 
-    <ion-button routerLink="/welcome" id="back">Regresar</ion-button>
+    <!-- <ion-button routerLink="/welcome">Regresar</ion-button> -->
 
 
 

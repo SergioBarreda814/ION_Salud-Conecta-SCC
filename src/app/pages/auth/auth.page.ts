@@ -1,10 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from 'src/app/models/user.module';
+import { User } from 'src/app/models/user.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
-import { LoginService } from './login.service';
-
 
 @Component({
   selector: 'app-auth',
@@ -21,18 +19,8 @@ export class AuthPage implements OnInit {
   firebaseSvc = inject(FirebaseService);
   utilsSvc = inject(UtilsService)
 
-  // LOGIN DE GOOGLE //
-  constructor(private loginService: LoginService) { }
-
   ngOnInit() {
-    this.loginService.initializeGoogleAuth(); // Inicializa GoogleAuth al cargar el componente
   }
-
-  loginWithGoogle() {
-    this.loginService.loginWithGoogle();
-  }
-
-  
 
   async submit() {
 

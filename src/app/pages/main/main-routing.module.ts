@@ -6,19 +6,22 @@ import { MainPage } from './main.page';
 const routes: Routes = [
   {
     path: '',
-    component: MainPage
-  },  {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    component: MainPage,
+    children: [
+      {
+        path: 'profile',
+        loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
+      },
+      {
+        path: 'appointments',
+        loadChildren: () => import('./appointments/appointments.module').then(m => m.AppointmentsPageModule)
+      },
+      {
+        path: 'search',
+        loadChildren: () => import('./search/search.module').then(m => m.SearchPageModule)
+      }
+    ]
   },
-  {
-    path: 'appointments',
-    loadChildren: () => import('./appointments/appointments.module').then( m => m.AppointmentsPageModule)
-  },
-  {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  }
 
 ];
 
@@ -26,4 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MainPageRoutingModule {}
+export class MainPageRoutingModule { }

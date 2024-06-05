@@ -1,13 +1,56 @@
+<app-header [showMenu]="true" title="Salud Conecta" subtitle="P E R F I L"></app-header>
+<ion-content class="ion-padding-top ion-text-center" >
+  
+  
+  <ion-avatar>
+    <img *ngIf="user()?.image" [src]="user()?.image" />
+    <ion-icon *ngIf="!user()?.image" class="empty-icon" name="person-circle-outline"></ion-icon>
+  </ion-avatar>
+
+  <ion-button class="photo-btn" (click)="takeImage()" mode="ios" size="small" shape="round">
+    <ion-icon name="camera-outline"></ion-icon>
+  </ion-button>
+
+  <h2> {{user().name}} </h2>
+  <div>Paciente</div>
+
+
+  <ion-item button detail>
+    <ion-icon color="primary" slot="start" name="person-outline"></ion-icon>
+    <ion-label>Datos Personales</ion-label>
+  </ion-item>
+
+  <!-- <ion-button (click)="signOut()" shape="round">
+    Cerrar Sesión
+    <ion-icon slot="end" name="log-out-outline"></ion-icon>
+  </ion-button>  -->
+
+
+
+
+</ion-content>
+
+
+
+<!-- <ion-content [fullscreen]="true">
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<div class="content ion-text-center">
+  <ion-icon class="avatar" name="person-circle-outline"></ion-icon>
+  <h2> {{user.name}} </h2>
+  <div> {{user.email}} </div>
 
-<ion-button (click)="signOut()">
-  Click me
+<ion-button (click)="signOut()" shape="round">
+  Cerrar Sesión
+  <ion-icon slot="end" name="log-out-outline"></ion-icon>
 </ion-button>
 
+</div>
 </ion-content>
+
+-->
