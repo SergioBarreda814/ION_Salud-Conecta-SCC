@@ -1,4 +1,73 @@
 p {
-    color: blue;
-    text-decoration: underline;
-  }
+  color: blue;
+  text-decoration: underline;
+  text-align: center !important;
+}
+
+.divider {
+  display: flex;
+  /* Utiliza un contenedor flexible para alinear elementos hijos en una fila */
+  align-items: center;
+  /* Centra los elementos hijos verticalmente */
+  text-align: center;
+  /* Centra el texto en elementos en línea o inline-block */
+  margin: 20px 0;
+  /* Añade un margen de 20 píxeles arriba y abajo del contenedor */
+}
+
+/* Estilos para los pseudo-elementos antes y después del texto */
+.divider::before,
+.divider::after {
+  content: '';
+  /* Genera un pseudo-elemento vacío */
+  flex: 1;
+  /* Permite que los pseudo-elementos se expandan para llenar el espacio disponible */
+  border-bottom: 1px solid #000;
+  /* Dibuja una línea sólida de 1 píxel de grosor y color negro */
+}
+
+/* Añade un margen a la derecha del pseudo-elemento antes del texto */
+.divider::before {
+  margin-right: 10px;
+  /* Crea un espacio entre la línea y el texto */
+}
+
+/* Añade un margen a la izquierda del pseudo-elemento después del texto */
+.divider::after {
+  margin-left: 10px;
+  /* Crea un espacio entre la línea y el texto */
+}
+
+/* Estilo para el texto dentro del contenedor de la línea divisoria */
+.divider span {
+  display: inline-block;
+  /* Define el span como un elemento en línea con propiedades de bloque */
+  padding: 0 10px;
+  /* Añade un relleno de 0 píxeles arriba y abajo, y 10 píxeles a la izquierda y derecha */
+  background: #fff;
+  /* Establece el fondo del span en blanco para cubrir la línea divisoria */
+  color: #000;
+  /* Define el color del texto en negro */
+  font-weight: bold;
+  /* Hace que el texto sea negrita */
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-left: 6.4em;
+}
+
+.LGA {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 10px;
+
+}
+
+.Bback {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 2.5em;
+}

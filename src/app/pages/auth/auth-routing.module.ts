@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     component: AuthPage
-  },  {
+  },
+  {
     path: 'sign-up-doctors',
     loadChildren: () => import('./sign-up-doctors/sign-up-doctors.module').then( m => m.SignUpDoctorsPageModule)
   }

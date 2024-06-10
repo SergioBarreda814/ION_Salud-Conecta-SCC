@@ -1,8 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from 'src/app/models/user.model';
+import { User } from '../../models/user.model'; 
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-auth',
@@ -17,27 +18,33 @@ export class AuthPage implements OnInit {
   })
 
   firebaseSvc = inject(FirebaseService);
-  utilsSvc = inject(UtilsService)
+  utilsSvc = inject(UtilsService);
+
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    this.loginService.initializeGoogleAuth(); // Inicializa GoogleAuth al cargar el componente
   }
 
+  loginWithGoogle() {
+    this.loginService.loginWithGoogle();
+  }
+
+  loginWithFacebook() {
+    this.loginService.loginWithFacebook();
+  }
+
+  
+
   async submit() {
-
     if (this.form.valid) {
-
-      const loading = await this.utilsSvc.loading()
+      const loading = await this.utilsSvc.loading();
       await loading.present();
 
       this.firebaseSvc.signIn(this.form.value as User).then(res => {
-
         this.getUserInfo(res.user.uid);
-      
-      
-      
       }).catch(error => {
         console.log(error);
-        
         this.utilsSvc.presentToast({
            message: error.message,
            duration: 2500,
@@ -45,27 +52,20 @@ export class AuthPage implements OnInit {
            position: 'middle',
            icon: 'alert-circle-outline'
         })
-
       }).finally(() => {
         loading.dismiss();
       })
     }
-
-
   }
 
-
   async getUserInfo(uid: string) {
-
     if (this.form.valid) {
-
       const loading = await this.utilsSvc.loading();
       await loading.present();
 
       let path = `users/${uid}`;
 
       this.firebaseSvc.getDocument(path).then( (user: User) => {
-
         this.utilsSvc.SaveInLocalStorage('user', user);
         this.utilsSvc.routerLink('/main/profile');
         this.form.reset();
@@ -76,13 +76,9 @@ export class AuthPage implements OnInit {
           color: 'primary',
           position: 'middle',
           icon: 'person-circle-outline'
-       })
-
-
-        
+        })
       }).catch(error => {
         console.log(error);
-
         this.utilsSvc.presentToast({
            message: error.message,
            duration: 2500,
@@ -90,12 +86,9 @@ export class AuthPage implements OnInit {
            position: 'middle',
            icon: 'alert-circle-outline'
         })
-
       }).finally(() => {
         loading.dismiss();
       })
     }
-
-
   }
 }

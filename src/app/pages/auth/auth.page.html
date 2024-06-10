@@ -1,32 +1,32 @@
-<app-header backbutton="/welcome" title="Salud Conecta" subtitle="L O G I N"></app-header>
+<app-header title="Salud Conecta"></app-header>
 <ion-content>
     <div class="d-flex-center">
-        
+
         <form [formGroup]="form" (ngSubmit)="submit()" (keypress.enter)="submit()">
-<!-- CORREO -->
-            <app-custom-input
-                autocomplete="email" 
-                icon="mail-outline" 
-                [control]="form.controls.email" 
-                type="email"
-                label="correo"
-            ></app-custom-input>
+            <!-- GOOGLE -->
+            <ion-button expand="block" mode="ios" class="LGA" type="button" color="dark" (click)="loginWithGoogle()">
+                <ion-icon slot="start" name="logo-google"></ion-icon>
+                Continuar con Google
+            </ion-button>
+            
+            <!-- LINEA DE DIVICIÓN-->
+            <div class="divider"><span>OR</span></div>
+
+            <!-- CORREO -->
+            <app-custom-input autocomplete="email" icon="mail-outline" [control]="form.controls.email" type="email"
+                label="correo"></app-custom-input>
 
             <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
                 <div *ngIf="form.controls.email.errors?.['required']">El correo es requerido</div>
-                <div *ngIf="form.controls.email.errors?.['email']">Ingresa un correo valido</div>            
+                <div *ngIf="form.controls.email.errors?.['email']">Ingresa un correo valido</div>
             </div>
 
-<!-- CONTRASEÑA -->
-            <app-custom-input 
-                icon="lock-closed-outline" 
-                [control]="form.controls.password" 
-                type="password"
-                label="contraseña"
-            ></app-custom-input>
+            <!-- CONTRASEÑA -->
+            <app-custom-input icon="lock-closed-outline" [control]="form.controls.password" type="password"
+                label="contraseña"></app-custom-input>
 
             <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.touched">
-                <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>        
+                <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
             </div>
 
 
@@ -37,17 +37,17 @@
                 <ion-icon slot="end" name="log-in-outline"></ion-icon>
             </ion-button>
 
-            <ion-button class="ion-margin-top" expand="block"  routerLink="/sign-up" mode="ios" fill="outline">
+            <ion-button class="ion-margin-top" expand="block" routerLink="/sign-up" mode="ios" fill="outline">
                 Registrate
                 <ion-icon slot="end" name="person-add-outline"></ion-icon>
             </ion-button>
 
         </form>
-    
+
     </div>
 
 
-    <!-- <ion-button routerLink="/welcome">Regresar</ion-button> -->
+    <ion-button routerLink="/welcome" expand="block" mode="ios" class="Bback">Regresar <ion-icon slot="start" name="return-down-back-outline"></ion-icon></ion-button>
 
 
 
