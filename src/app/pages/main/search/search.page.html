@@ -1,9 +1,24 @@
-<app-header [showMenu]="true" title="Salud Conecta" subtitle="B U S C A R"></app-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content class="ion-padding-top ion-text-center" >
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">search</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-searchbar (ionInput)="filterDocuments($event)" placeholder="Buscar por nombre o especialidad"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let doc of documents">
+      <ion-label>
+        <h2>{{ doc.Name }}</h2> <!-- Reemplaza 'name' con el campo que desees mostrar -->
+        <p>{{ doc.Direccion }}</p> <!-- Reemplaza 'description' con el campo que desees mostrar -->
+        <p>{{ doc.Telefono }}</p>
+        <p>Especialidades:</p>
+        <ul>
+          <li *ngFor="let especialidad of doc['Especialidades']">
+            {{ especialidad }}
+          </li>
+        </ul>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

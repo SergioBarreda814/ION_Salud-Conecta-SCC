@@ -1,4 +1,7 @@
+// Dentro de tu página de búsqueda (search.page.ts)
+
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/services/firebase.service'; // Asegúrate de que la ruta sea correcta
 
 @Component({
   selector: 'app-search',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPage implements OnInit {
 
-  constructor() { }
+  public documents: any[] = [];
+
+  constructor(private firebaseService: FirebaseService) {}
 
   ngOnInit() {
+    this.getDocuments('doctors_centers');
   }
 
+  getDocuments(collectionPath: string) {
+    this.firebaseService.getCollectionData(collectionPath).subscribe((data: any[]) => {
+      this.documents = data;
+    });
+  }
+
+  filterDocuments($event){
+    
+  }
+
+  
 }
