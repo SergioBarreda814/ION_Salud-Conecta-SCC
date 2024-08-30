@@ -7,9 +7,11 @@
 <ion-content>
   <ion-searchbar (ionInput)="filterDocuments($event)" placeholder="Buscar por nombre o especialidad"></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let doc of documents">
-      <ion-label>
-        <h2>{{ doc.Name }}</h2> <!-- Reemplaza 'name' con el campo que desees mostrar -->
+    <ion-card *ngFor="let doc of documents" (click)="goToDetail(doc)">
+      <ion-card-header>
+        <ion-card-title>{{ doc.Name }}</ion-card-title> <!-- Reemplaza 'name' con el campo que desees mostrar -->
+      </ion-card-header>
+      <ion-card-content>
         <p>{{ doc.Direccion }}</p> <!-- Reemplaza 'description' con el campo que desees mostrar -->
         <p>{{ doc.Telefono }}</p>
         <p>Especialidades:</p>
@@ -18,7 +20,7 @@
             {{ especialidad }}
           </li>
         </ul>
-      </ion-label>
-    </ion-item>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>
