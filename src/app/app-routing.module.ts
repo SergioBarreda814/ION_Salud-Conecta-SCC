@@ -38,9 +38,10 @@ const routes: Routes = [
   {
     path: 'main-doctor',
     loadChildren: () => import('./pages/main-doctor/main-doctor.module').then( m => m.MainDoctorPageModule)
-  },  {
+  },
+  {
     path: 'doctor-detail',
-    loadChildren: () => import('./doctor-detail/doctor-detail.module').then( m => m.DoctorDetailPageModule)
+    loadChildren: () => import('./pages/doctor-detail/doctor-detail.module').then( m => m.DoctorDetailPageModule)
   }
 
 ];

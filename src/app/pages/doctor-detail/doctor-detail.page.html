@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">Regresar</ion-button> <!-- Aquí llamamos a la función goBack -->
+    </ion-buttons>
+    <ion-title>Detalles del Doctor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-img [src]="doctor.Foto" alt="Foto del doctor"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ doctor.Name }}</ion-card-title>
+      <p>Especialidades: {{ doctor.Especialidades.join(', ') }}</p>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Dirección:</strong> {{ doctor.Direccion }}</p>
+      <p><strong>Teléfono:</strong> {{ doctor.Telefono }}</p>
+      
+      <!-- Puedes agregar más información según los datos disponibles -->
+    </ion-card-content>
+  </ion-card>
+
+  <div class="button-container">
+    <ion-button expand="block" color="primary" size="large" (click)="scheduleAppointment()">
+      Agendar Cita
+    </ion-button>
+  </div>
+</ion-content>
