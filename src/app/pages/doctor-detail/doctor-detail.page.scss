@@ -1,0 +1,36 @@
+.doctor-img {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    height: 250px;
+    /* Altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Recorta la imagen si es necesario, manteniendo la proporción */
+    border-radius: 8px;
+    /* Opcional, redondea las esquinas de la imagen */
+}
+
+
+.button-container {
+    margin: 20px;
+}
+
+.fancy-button {
+    --border-radius: 12px;
+    --background: linear-gradient(45deg, #4CAF50, #008CBA);
+    /* Degradado en el fondo */
+    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra sutil */
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --color: white;
+    --icon-padding-end: 8px;
+    /* Espacio entre el ícono y el texto */
+}
+
+.fancy-button:hover {
+    --background: linear-gradient(45deg, #66BB6A, #00ACC1);
+    /* Efecto hover con un degradado más claro */
+    --box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    /* Aumenta la sombra al pasar el cursor */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}

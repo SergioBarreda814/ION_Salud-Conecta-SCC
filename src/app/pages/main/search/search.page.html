@@ -5,30 +5,42 @@
 </ion-header>
 
 <ion-content>
+  <!-- Barra de búsqueda -->
   <ion-searchbar (ionInput)="filterDocuments($event)" placeholder="Buscar por nombre o especialidad"></ion-searchbar>
-   
+
   <!-- Mensaje para cuando no hay coincidencias -->
-   <div *ngIf="documents.length === 0" class="no-results">
+  <div *ngIf="documents.length === 0" class="no-results">
     <p>No se encontraron coincidencias.</p>
     <p>Verifique su búsqueda.</p>
     <p>Busque por Nombre, Dirección o Especialidad.</p>
   </div>
 
+  <!-- Lista de doctores -->
   <ion-list>
-    <ion-card *ngFor="let doc of documents" (click)="goToDetail(doc)">
-      <ion-img [src]="doc.Foto" alt="Foto del doctor"></ion-img>
-      <ion-card-header>
-        <ion-card-title>{{ doc.Name }}</ion-card-title> <!-- Reemplaza 'name' con el campo que desees mostrar -->
-      </ion-card-header>
+    <ion-card *ngFor="let doc of documents" (click)="goToDetail(doc)" class="doctor-card">
+      <!-- Avatar del doctor -->
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="doc.Foto" alt="Foto del doctor">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ doc.Name }}</h2>
+          <p>{{ doc.Especialidades}}</p> <!-- Mostrar la primera especialidad -->
+
+        </ion-label>
+      </ion-item>
+
+      <!-- Contenido de la tarjeta -->
       <ion-card-content>
-        <p>{{ doc.Direccion }}</p> <!-- Reemplaza 'description' con el campo que desees mostrar -->
-        <p>{{ doc.Telefono }}</p>
-        <p>Especialidades:</p>
-        <ul>
-          <li *ngFor="let especialidad of doc['Especialidades']">
-            {{ especialidad }}
-          </li>
-        </ul>
+        <ion-icon name="location-outline"></ion-icon> {{ doc.Direccion }}
+        <br>
+        <ion-icon name="call-outline"></ion-icon> {{ doc.Telefono }}
+        <br>
+        <ion-icon name="calendar-outline"></ion-icon> Próxima fecha disponible: {{ doc.Fecha }}
+        <div class="botones-cita">
+          <ion-button size="small" *ngFor="let hora of doc.Horarios">{{ hora }}</ion-button>
+          <ion-button size="small" fill="outline">Ver más</ion-button>
+        </div>
       </ion-card-content>
     </ion-card>
   </ion-list>

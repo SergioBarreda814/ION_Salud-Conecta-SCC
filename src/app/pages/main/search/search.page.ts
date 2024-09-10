@@ -54,3 +54,4 @@ export class SearchPage implements OnInit {
     this.navCtrl.navigateForward('/doctor-detail', { state: { doctor: doc } });
   }
 }
+
